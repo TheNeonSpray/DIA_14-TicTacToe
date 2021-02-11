@@ -1,24 +1,35 @@
-import React from "react";
-
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, { useState } from "react";
+import { ChooseWeapon } from "./ChooseWeapon.js";
+import { Board } from "./Board";
 
 //create your first component
 export function Home() {
+	const [visible, setVisible] = useState("");
+	const [invisible, setInvisible] = useState("d-none");
+
+	const visibleToggle = () => {
+		setVisible("d-none");
+		setInvisible("");
+	};
+
+	const invisibleToogle = () => {
+		setVisible("");
+		setInvisible("d-none");
+	};
+
 	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className="row">
+			<div className="col-md-12 mb-3">
+				<h1 className="text-center text-white">
+					Tic Tac Toe in React.js
+				</h1>
+			</div>
+			<div className={"col-md-12 mb-3 " + visible}>
+				<ChooseWeapon visibleToggle={visibleToggle} />
+			</div>
+			<div className={"col-md-12 mb-3 " + invisible}>
+				<Board invisibleToogle={invisibleToogle} />
+			</div>
 		</div>
 	);
 }

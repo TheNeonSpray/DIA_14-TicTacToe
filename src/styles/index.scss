@@ -1,13 +1,64 @@
 @import "~bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
-/* 
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+body{
+    background-image: url(https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1423&q=80);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: gray;
+    font-family: 'Audiowide', cursive;
+}
 
-*/
+.jugadores{
+    background-color:#01021e;
+    padding: 30px;
+    margin: 150px 85px 0px 85px;
+    border-radius: 15px 50px;
+
+}
+
+
+
+.square {
+  background: #01021e;
+  border: 1px solid #999;
+  float: left;
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 150px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 150px;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.superboard{
+    display: flex;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.pick-a-weapon{
+    background-color:#01021e;
+    padding: 10px;
+}
